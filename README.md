@@ -26,8 +26,6 @@ Works on any 64-bit Android phone running Android 10 or newer.
 
 - In Instagram, Facebook, X, Threads or YouTube tap **Share**, then **ClipSaver**.
   The video lands in Gallery under **ClipSaver**.
-- For Instagram, open ClipSaver, tap the **gear icon**, and log in once. Without a
-  login Instagram hides most videos. Logins stay on your phone.
 - Updating later: install the new `ClipSaver.apk` over the old one the same way.
   Settings and logins are kept.
 
