@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="te">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>ClipSaver డౌన్‌లోడ్</title>
+<meta name="description" content="ClipSaver Android యాప్ డౌన్‌లోడ్ — Instagram, Facebook, X, Threads, YouTube వీడియోలు గ్యాలరీలోకి">
+<style>
+  :root { --bg:#0f172a; --card:#1e293b; --text:#f8fafc; --muted:#cbd5e1; --accent:#3b82f6; }
+  * { box-sizing:border-box; }
+  body { margin:0; background:var(--bg); color:var(--text); font-family:-apple-system,"Segoe UI",Roboto,"Noto Sans Telugu",sans-serif; line-height:1.6; }
+  main { max-width:520px; margin:0 auto; padding:32px 20px 48px; }
+  .logo { width:72px; height:72px; border-radius:18px; background:var(--accent); display:flex; align-items:center; justify-content:center; margin-bottom:16px; }
+  h1 { font-size:28px; margin:0 0 6px; }
+  p { color:var(--muted); margin:0 0 16px; font-size:17px; }
+  a.btn { display:block; text-align:center; background:var(--accent); color:#fff; text-decoration:none; font-size:20px; font-weight:700; padding:18px; border-radius:16px; margin:24px 0 12px; }
+  .small { font-size:14px; color:var(--muted); }
+  .card { background:var(--card); border-radius:16px; padding:18px; margin-top:24px; }
+  ol { padding-left:20px; color:var(--muted); font-size:16px; } li { margin-bottom:8px; }
+  code { background:#0b1220; padding:2px 6px; border-radius:6px; font-size:14px; }
+</style>
+</head>
+<body>
+<main>
+  <div class="logo"><svg width="40" height="40" viewBox="0 0 24 24" fill="#fff"><path d="M11 4h2v9h3l-4 4-4-4h3zM4 18h16v2H4z"/></svg></div>
+  <h1>ClipSaver</h1>
+  <p>Instagram, Facebook, X, Threads, YouTube వీడియోలను ఫోన్ గ్యాలరీలోకి సేవ్ చేసే Android యాప్.</p>
+  <a class="btn" id="dl" href="https://github.com/patanjaliv/ClipSaver-releases/releases/latest/download/ClipSaver.apk">⬇ డౌన్‌లోడ్ చేయండి (Android APK)</a>
+  <div class="small" id="ver">తాజా వెర్షన్ · సుమారు 47 MB</div>
+  <div class="card">
+    <strong>ఇన్‌స్టాల్ చేయడం ఎలా</strong>
+    <ol>
+      <li>పై బటన్ నొక్కి ఫైల్ డౌన్‌లోడ్ చేయండి.</li>
+      <li>డౌన్‌లోడ్ అయిన <code>ClipSaver.apk</code> ని తెరవండి.</li>
+      <li>"ఈ సోర్స్ నుండి ఇన్‌స్టాల్ అనుమతించు" అడిగితే అనుమతి ఇవ్వండి.</li>
+      <li>పాత వెర్షన్ ఉంటే దాని మీదే ఇన్‌స్టాల్ అవుతుంది — మళ్ళీ సెట్టింగ్స్ అవసరం లేదు.</li>
+    </ol>
+    <div class="small">iPhone కోసం ఈ యాప్ లేదు. సమస్య ఉంటే లింక్ పంపినవారికి స్క్రీన్‌షాట్ పంపండి.</div>
+  </div>
+</main>
+<script>
+  // show the real version number from the latest release, when GitHub's API answers
+  fetch('https://api.github.com/repos/patanjaliv/ClipSaver-releases/releases/latest').then(r => r.json()).then(j => {
+    if (j && j.tag_name) document.getElementById('ver').textContent = 'వెర్షన్ ' + j.tag_name.replace(/^v/, '') + ' · సుమారు ' + Math.round(((j.assets || [])[0] || {}).size / 1048576 || 47) + ' MB';
+  }).catch(() => {});
+</script>
+</body>
+</html>
